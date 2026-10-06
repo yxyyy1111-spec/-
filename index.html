@@ -8,6 +8,8 @@
   <title>文理食堂 · 好好吃饭指南</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="supabase-config.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -60,7 +62,7 @@
 
     <section class="review-section" id="reviews">
       <div class="review-copy"><div class="eyebrow">YOUR TURN / 03</div><h2>你的食堂心头好，<br><em>也值得被看见。</em></h2><p>分享窗口、菜品或一条实用小贴士，给下一位正在纠结吃什么的同学一点灵感。</p><div class="review-doodle">写下你的<br>今日好味道 <span>✎</span></div></div>
-      <div class="review-panel"><form id="review-form"><label for="review-canteen">这条推荐来自哪个食堂？</label><div class="review-fields"><select id="review-canteen" required><option value="第一食堂">第一食堂</option><option value="第二食堂">第二食堂</option><option value="第三食堂">第三食堂</option></select><input id="review-dish" maxlength="30" placeholder="菜品名称（可选）" aria-label="菜品名称，可选"></div><label for="review-input">写下你的推荐</label><textarea id="review-input" maxlength="240" placeholder="说说味道、分量、价格，或哪个窗口值得一试……" required></textarea><div class="form-foot"><span id="char-count">0 / 240</span><button class="button button-dark" type="submit">发布评价 <span>↗</span></button></div><p class="storage-hint">体验版：评价保存在当前浏览器中，不同设备暂不共享。</p></form><div class="review-list-heading"><h3>同学在分享</h3><select id="review-filter" aria-label="按食堂筛选评价"><option value="all">全部食堂</option><option value="第一食堂">第一食堂</option><option value="第二食堂">第二食堂</option><option value="第三食堂">第三食堂</option></select></div><div id="review-list" class="review-list" aria-live="polite"></div><p id="empty-state" class="empty-state">第一条食堂推荐，等你来写 ✨</p></div>
+      <div class="review-panel"><form id="review-form"><label for="review-canteen">这条推荐来自哪个食堂？</label><div class="review-fields"><select id="review-canteen" required><option value="第一食堂">第一食堂</option><option value="第二食堂">第二食堂</option><option value="第三食堂">第三食堂</option></select><input id="review-dish" maxlength="30" placeholder="菜品名称（可选）" aria-label="菜品名称，可选"></div><label for="review-input">写下你的推荐</label><textarea id="review-input" maxlength="240" placeholder="说说味道、分量、价格，或哪个窗口值得一试……" required></textarea><div class="form-foot"><span id="char-count">0 / 240</span><button class="button button-dark" type="submit">发布评价 <span>↗</span></button></div><p id="review-status" class="storage-hint">评价会在审核通过后显示给所有人。</p></form><div class="review-list-heading"><h3>同学在分享</h3><select id="review-filter" aria-label="按食堂筛选评价"><option value="all">全部食堂</option><option value="第一食堂">第一食堂</option><option value="第二食堂">第二食堂</option><option value="第三食堂">第三食堂</option></select></div><div id="review-list" class="review-list" aria-live="polite"></div><p id="empty-state" class="empty-state">正在加载评价…</p></div>
     </section>
   </main>
 
@@ -68,3 +70,4 @@
   <nav class="mobile-nav" aria-label="底部导航"><a href="#home"><span>⌂</span>首页</a><a href="#canteens"><span>▦</span>食堂</a><a href="#popular"><span>✳</span>菜品</a><a href="#reviews"><span>✎</span>评价</a></nav>
 </body>
 </html>
+
